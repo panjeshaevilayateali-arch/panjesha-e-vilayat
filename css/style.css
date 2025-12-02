@@ -43,7 +43,7 @@
     }
     
     .header-logo img {
-        width: 90px;
+        width: 60px;
         height: 90px;
         border-radius: 50%;
         object-fit: cover;
@@ -65,7 +65,7 @@
     }
 
     .header-logo-right img {
-        width: 90px;
+        width: 60px;
         height: 90px;
         border-radius: 50%;
         object-fit: cover;
@@ -84,7 +84,7 @@
     }
     
     .page-header h1 {
-        font-size: 2.8em;
+        font-size: 2.0em;
         margin: 0;
         color: white;
         font-weight: 700;
