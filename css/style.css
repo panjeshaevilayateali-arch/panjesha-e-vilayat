@@ -274,7 +274,7 @@ body {
     color: #000000;
     text-shadow: 
         0 0 10px #ff0000,
-        0 0 20px              #ff0000,
+        0 0 20px #ff0000,
         0 0 30px #ff0000,
         0 0 40px #ff0000;
     animation: starGlow 2s ease-in-out infinite alternate;
@@ -912,26 +912,28 @@ body {
     margin-top: 5px;
 }
 
-/* ===== ORIGINAL BRAND-COLORED SOCIAL MEDIA SECTION ===== */
+/* ===== SEPARATE CONNECT WITH US SECTION - HORIZONTAL ROW ===== */
 .social-media {
     text-align: center;
-    margin: 30px 0;
+    margin: 40px 0 30px 0; /* Added space to separate from contact info */
     padding: 30px;
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
-    border-radius: 12px;
-    border-left: 5px solid #ff0000;
-    border-right: 5px solid #ff0000;
+    background: linear-gradient(135deg, rgba(255, 249, 249, 0.95) 0%, rgba(255, 240, 240, 0.95) 100%);
+    border-radius: 15px;
+    border: 3px solid #ff0000;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
+    width: 100%;
 }
 
 .social-title {
     font-size: 1.8em;
     color: #2d0000;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
+/* HORIZONTAL ROW FORMAT - All 4 icons in one line */
 .social-icons {
     display: flex;
     justify-content: center;
@@ -941,52 +943,48 @@ body {
 }
 
 /* Instagram - Original Brand Colors */
-.social-icon.instagram,
 .social-icon:nth-child(1) {
     color: #E4405F; /* Instagram brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
+    background: white;
+    border: 2px solid #E4405F;
 }
 
-.social-icon.instagram:hover,
 .social-icon:nth-child(1):hover {
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
     color: white;
 }
 
 /* YouTube - Original Brand Colors */
-.social-icon.youtube,
 .social-icon:nth-child(2) {
     color: #FF0000; /* YouTube brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
+    background: white;
+    border: 2px solid #FF0000;
 }
 
-.social-icon.youtube:hover,
 .social-icon:nth-child(2):hover {
     background: #FF0000;
     color: white;
 }
 
 /* Facebook - Original Brand Colors */
-.social-icon.facebook,
 .social-icon:nth-child(3) {
     color: #1877F2; /* Facebook brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
+    background: white;
+    border: 2px solid #1877F2;
 }
 
-.social-icon.facebook:hover,
 .social-icon:nth-child(3):hover {
     background: #1877F2;
     color: white;
 }
 
 /* WhatsApp - Original Brand Colors */
-.social-icon.whatsapp,
 .social-icon:nth-child(4) {
     color: #25D366; /* WhatsApp brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
+    background: white;
+    border: 2px solid #25D366;
 }
 
-.social-icon.whatsapp:hover,
 .social-icon:nth-child(4):hover {
     background: #25D366;
     color: white;
@@ -1000,30 +998,20 @@ body {
     text-decoration: none;
     transition: all 0.4s ease;
     padding: 20px;
-    border-radius: 15px;
-    min-width: 120px;
+    border-radius: 12px;
+    min-width: 140px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
 }
 
-.social-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, currentColor, rgba(255,255,255,0.5), currentColor);
-}
-
 .social-icon:hover {
-    transform: translateY(-10px) scale(1.05);
+    transform: translateY(-8px) scale(1.05);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
 .social-icon i {
-    font-size: 2.5em;
+    font-size: 2.8em;
     margin-bottom: 10px;
     transition: all 0.3s ease;
 }
@@ -1034,7 +1022,7 @@ body {
 }
 
 .social-icon span {
-    font-size: 1em;
+    font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -1570,7 +1558,7 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
-    /* Mobile Social Icons */
+    /* Mobile Social Icons - Keep horizontal */
     .social-icon {
         min-width: 100px;
         padding: 15px;
@@ -1579,6 +1567,7 @@ body {
     .social-icons {
         gap: 15px;
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .section-title {
@@ -1728,15 +1717,18 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* Mobile Social Icons - Stack vertically */
+    /* Mobile Social Icons - Keep horizontal but wrap */
     .social-icons {
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
+        justify-content: center;
     }
 
     .social-icon {
-        width: 100%;
-        min-width: auto;
+        width: auto;
+        min-width: 100px;
+        padding: 12px;
     }
 
     /* Gallery Mobile Small Styles */
