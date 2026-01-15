@@ -815,37 +815,38 @@ body {
     transform: scale(1.1);
 }
 
-/* ===== ENHANCED CONTACT CONTENT ===== */
-.contact-info {
+/* ===== CONTACT SECTION - 3 COLUMN LAYOUT ===== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 25px 0;
+}
+
+.contact-info-box {
     background: linear-gradient(135deg, rgba(255, 245, 245, 0.9) 0%, rgba(255, 230, 230, 0.9) 100%);
-    padding: 40px;
+    padding: 30px;
     border-radius: 12px;
     border-left: 5px solid #ff0000;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
-.contact-info h3 {
+.contact-info-box h3 {
     color: #2d0000;
-    margin: 25px 0 15px 0;
-    font-size: 1.4em;
+    margin-bottom: 20px;
+    font-size: 1.6em;
     font-weight: 700;
     border-bottom: 2px solid #ffcccc;
-    padding-bottom: 8px;
-    text-align: center;
-}
-
-.contact-info h3:first-child {
-    margin-top: 0;
+    padding-bottom: 10px;
 }
 
 .contact-detail {
     margin: 15px 0;
-    padding: 15px;
+    padding: 12px;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 8px;
     border-left: 3px solid #ff0000;
     transition: all 0.3s ease;
-    text-align: center;
 }
 
 .contact-detail:hover {
@@ -856,10 +857,11 @@ body {
 .contact-detail strong {
     color: #2d0000;
     font-size: 1.1em;
+    display: block;
+    margin-bottom: 5px;
 }
 
 .map-container {
-    margin: 25px 0;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -899,40 +901,56 @@ body {
     100% { transform: scale(1); }
 }
 
-.map-text {
-    font-size: 1.2em;
+.map-overlay {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    max-width: 200px;
+    z-index: 10;
+}
+
+.map-overlay img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 2px solid #ff0000;
+}
+
+.map-overlay p {
+    margin: 8px 0 0 0;
+    font-size: 0.8em;
+    text-align: center;
+    color: #333;
     font-weight: 600;
-    color: #2d0000;
-    text-align: center;
 }
 
-.map-subtext {
-    font-size: 0.9em;
-    color: #666;
-    margin-top: 5px;
-}
-
-/* ===== ORIGINAL BRAND-COLORED SOCIAL MEDIA SECTION ===== */
-.social-media {
-    text-align: center;
-    margin: 30px 0;
+/* ===== SEPARATE CONNECT WITH US SECTION - HORIZONTAL ROW ===== */
+.connect-section {
+    margin: 40px 0 30px 0;
     padding: 30px;
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
-    border-radius: 12px;
-    border-left: 5px solid #ff0000;
-    border-right: 5px solid #ff0000;
+    background: linear-gradient(135deg, rgba(255, 249, 249, 0.95) 0%, rgba(255, 240, 240, 0.95) 100%);
+    border-radius: 15px;
+    border: 3px solid #ff0000;
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
 }
 
-.social-title {
+.connect-title {
     font-size: 1.8em;
     color: #2d0000;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.social-icons {
+/* HORIZONTAL SOCIAL ICONS ROW */
+.social-horizontal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -940,158 +958,100 @@ body {
     flex-wrap: wrap;
 }
 
-/* Instagram - Original Brand Colors */
-.social-icon.instagram,
-.social-icon:nth-child(1) {
-    color: #E4405F; /* Instagram brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
-}
-
-.social-icon.instagram:hover,
-.social-icon:nth-child(1):hover {
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    color: white;
-}
-
-/* YouTube - Original Brand Colors */
-.social-icon.youtube,
-.social-icon:nth-child(2) {
-    color: #FF0000; /* YouTube brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
-}
-
-.social-icon.youtube:hover,
-.social-icon:nth-child(2):hover {
-    background: #FF0000;
-    color: white;
-}
-
-/* Facebook - Original Brand Colors */
-.social-icon.facebook,
-.social-icon:nth-child(3) {
-    color: #1877F2; /* Facebook brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
-}
-
-.social-icon.facebook:hover,
-.social-icon:nth-child(3):hover {
-    background: #1877F2;
-    color: white;
-}
-
-/* WhatsApp - Original Brand Colors */
-.social-icon.whatsapp,
-.social-icon:nth-child(4) {
-    color: #25D366; /* WhatsApp brand color */
-    background: linear-gradient(135deg, rgba(255, 249, 249, 0.9) 0%, rgba(255, 240, 240, 0.9) 100%);
-}
-
-.social-icon.whatsapp:hover,
-.social-icon:nth-child(4):hover {
-    background: #25D366;
-    color: white;
-}
-
-/* General Social Icon Styles */
-.social-icon {
+/* Individual horizontal social icons - ORIGINAL BRAND COLORS */
+.social-horiz {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
     transition: all 0.4s ease;
     padding: 20px;
-    border-radius: 15px;
-    min-width: 120px;
+    border-radius: 12px;
+    min-width: 140px;
+    background: white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
 }
 
-.social-icon::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, currentColor, rgba(255,255,255,0.5), currentColor);
+/* Instagram - Original Brand Color */
+.social-horiz.instagram {
+    color: #E4405F;
+    border: 2px solid #E4405F;
 }
 
-.social-icon:hover {
-    transform: translateY(-10px) scale(1.05);
+.social-horiz.instagram:hover {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+    border-color: transparent;
+}
+
+/* YouTube - Original Brand Color */
+.social-horiz.youtube {
+    color: #FF0000;
+    border: 2px solid #FF0000;
+}
+
+.social-horiz.youtube:hover {
+    background: #FF0000;
+    color: white;
+    border-color: transparent;
+}
+
+/* Facebook - Original Brand Color */
+.social-horiz.facebook {
+    color: #1877F2;
+    border: 2px solid #1877F2;
+}
+
+.social-horiz.facebook:hover {
+    background: #1877F2;
+    color: white;
+    border-color: transparent;
+}
+
+/* WhatsApp - Original Brand Color */
+.social-horiz.whatsapp {
+    color: #25D366;
+    border: 2px solid #25D366;
+}
+
+.social-horiz.whatsapp:hover {
+    background: #25D366;
+    color: white;
+    border-color: transparent;
+}
+
+.social-horiz:hover {
+    transform: translateY(-8px) scale(1.05);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.social-icon i {
-    font-size: 2.5em;
+.social-horiz i {
+    font-size: 2.8em;
     margin-bottom: 10px;
     transition: all 0.3s ease;
 }
 
-.social-icon:hover i {
+.social-horiz:hover i {
     transform: scale(1.2);
     animation: pulse 0.5s ease;
 }
 
-.social-icon span {
-    font-size: 1em;
+.social-horiz span {
+    font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
-/* ===== FOOTER SOCIAL ICONS - ORIGINAL BRAND COLORS ===== */
-.footer-social-icon.instagram,
-.footer-social-icons a:nth-child(1) {
-    color: #E4405F; /* Instagram brand color */
-}
-
-.footer-social-icon.instagram:hover,
-.footer-social-icons a:nth-child(1):hover {
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    color: white;
-}
-
-.footer-social-icon.youtube,
-.footer-social-icons a:nth-child(2) {
-    color: #FF0000; /* YouTube brand color */
-}
-
-.footer-social-icon.youtube:hover,
-.footer-social-icons a:nth-child(2):hover {
-    background: #FF0000;
-    color: white;
-}
-
-.footer-social-icon.facebook,
-.footer-social-icons a:nth-child(3) {
-    color: #1877F2; /* Facebook brand color */
-}
-
-.footer-social-icon.facebook:hover,
-.footer-social-icons a:nth-child(3):hover {
-    background: #1877F2;
-    color: white;
-}
-
-.footer-social-icon.whatsapp,
-.footer-social-icons a:nth-child(4) {
-    color: #25D366; /* WhatsApp brand color */
-}
-
-.footer-social-icon.whatsapp:hover,
-.footer-social-icons a:nth-child(4):hover {
-    background: #25D366;
-    color: white;
-}
-
-/* Queries/Contact Form Section */
+/* ===== QUERIES FORM SECTION ===== */
 .queries-section {
     margin: 40px 0;
     padding: 40px;
     background: linear-gradient(135deg, rgba(255, 249, 249, 0.95) 0%, rgba(255, 240, 240, 0.95) 100%);
     border-radius: 15px;
     border: 3px solid #ff0000;
-    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.15);
+    box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
 }
 
 .queries-title {
@@ -1209,53 +1169,6 @@ body {
     font-style: italic;
 }
 
-/* ===== NEW THREE-COLUMN LAYOUT ===== */
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    margin: 25px 0;
-}
-
-.contact-left {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.contact-right {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.map-overlay {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: white;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    max-width: 200px;
-    z-index: 10;
-}
-
-.map-overlay img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    border: 2px solid #ff0000;
-}
-
-.map-overlay p {
-    margin: 8px 0 0 0;
-    font-size: 0.8em;
-    text-align: center;
-    color: #333;
-    font-weight: 600;
-}
-
 /* ===== FOOTER STYLES ===== */
 .site-footer {
     background: linear-gradient(135deg, #000000 0%, #2d0000 100%);
@@ -1321,6 +1234,43 @@ body {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+/* Footer Social Icons - Original Brand Colors */
+.footer-social-icon.instagram {
+    color: #E4405F;
+}
+
+.footer-social-icon.instagram:hover {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+}
+
+.footer-social-icon.youtube {
+    color: #FF0000;
+}
+
+.footer-social-icon.youtube:hover {
+    background: #FF0000;
+    color: white;
+}
+
+.footer-social-icon.facebook {
+    color: #1877F2;
+}
+
+.footer-social-icon.facebook:hover {
+    background: #1877F2;
+    color: white;
+}
+
+.footer-social-icon.whatsapp {
+    color: #25D366;
+}
+
+.footer-social-icon.whatsapp:hover {
+    background: #25D366;
+    color: white;
 }
 
 .footer-social-icon {
@@ -1570,17 +1520,29 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
-    /* Mobile Social Icons */
-    .social-icon {
-        min-width: 100px;
+    /* Mobile Contact Layout */
+    .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .social-horizontal {
+        gap: 15px;
+    }
+    
+    .social-horiz {
+        min-width: 120px;
         padding: 15px;
     }
-
-    .social-icons {
-        gap: 15px;
-        flex-wrap: wrap;
+    
+    .social-horiz i {
+        font-size: 2.2em;
     }
-
+    
+    .social-horiz span {
+        font-size: 0.9em;
+    }
+    
     .section-title {
         font-size: 1.8em;
     }
@@ -1610,33 +1572,9 @@ body {
         font-size: 20px;
     }
 
-    /* Mobile responsive for contact layout */
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
+    /* Mobile responsive for queries form */
     .queries-form {
         grid-template-columns: 1fr;
-    }
-
-    .social-title {
-        font-size: 1.5em;
-    }
-
-    .social-icon i {
-        font-size: 2em;
-    }
-
-    .social-icon span {
-        font-size: 0.9em;
-    }
-
-    .map-overlay {
-        max-width: 150px;
-        top: 10px;
-        right: 10px;
-        padding: 8px;
     }
 
     .queries-section {
@@ -1728,15 +1666,24 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* Mobile Social Icons - Stack vertically */
-    .social-icons {
-        flex-direction: column;
+    /* Mobile Social Icons - Keep horizontal but wrap */
+    .social-horizontal {
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 10px;
     }
-
-    .social-icon {
-        width: 100%;
-        min-width: auto;
+    
+    .social-horiz {
+        min-width: 100px;
+        padding: 12px;
+    }
+    
+    .social-horiz i {
+        font-size: 1.8em;
+    }
+    
+    .social-horiz span {
+        font-size: 0.9em;
     }
 
     /* Gallery Mobile Small Styles */
