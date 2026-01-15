@@ -912,162 +912,157 @@ body {
     margin-top: 5px;
 }
 
-/* ===== SEPARATE CONNECT WITH US SECTION - HORIZONTAL ROW ===== */
-.social-media {
+/* ===== SEPARATE CONNECT WITH US SECTION - DISCONNECTED ===== */
+.connect-with-us-section {
     text-align: center;
-    margin: 40px 0 30px 0; /* Added space to separate from contact info */
-    padding: 30px;
+    margin: 40px auto;
+    padding: 40px 30px;
     background: linear-gradient(135deg, rgba(255, 249, 249, 0.95) 0%, rgba(255, 240, 240, 0.95) 100%);
     border-radius: 15px;
     border: 3px solid #ff0000;
     box-shadow: 0 10px 30px rgba(255, 0, 0, 0.15);
-    width: 100%;
+    max-width: 800px;
+    width: 90%;
 }
 
-.social-title {
+.connect-title {
     font-size: 1.8em;
     color: #2d0000;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* HORIZONTAL ROW FORMAT - All 4 icons in one line */
-.social-icons {
+/* HORIZONTAL ROW - All 4 icons in one line */
+.connect-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
     flex-wrap: wrap;
 }
 
-/* Instagram - Original Brand Colors */
-.social-icon:nth-child(1) {
-    color: #E4405F; /* Instagram brand color */
-    background: white;
-    border: 2px solid #E4405F;
-}
-
-.social-icon:nth-child(1):hover {
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    color: white;
-}
-
-/* YouTube - Original Brand Colors */
-.social-icon:nth-child(2) {
-    color: #FF0000; /* YouTube brand color */
-    background: white;
-    border: 2px solid #FF0000;
-}
-
-.social-icon:nth-child(2):hover {
-    background: #FF0000;
-    color: white;
-}
-
-/* Facebook - Original Brand Colors */
-.social-icon:nth-child(3) {
-    color: #1877F2; /* Facebook brand color */
-    background: white;
-    border: 2px solid #1877F2;
-}
-
-.social-icon:nth-child(3):hover {
-    background: #1877F2;
-    color: white;
-}
-
-/* WhatsApp - Original Brand Colors */
-.social-icon:nth-child(4) {
-    color: #25D366; /* WhatsApp brand color */
-    background: white;
-    border: 2px solid #25D366;
-}
-
-.social-icon:nth-child(4):hover {
-    background: #25D366;
-    color: white;
-}
-
 /* General Social Icon Styles */
-.social-icon {
+.connect-icon {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
     transition: all 0.4s ease;
-    padding: 20px;
+    padding: 20px 25px;
     border-radius: 12px;
-    min-width: 140px;
+    min-width: 130px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     position: relative;
     overflow: hidden;
+    background: white;
 }
 
-.social-icon:hover {
+.connect-icon:hover {
     transform: translateY(-8px) scale(1.05);
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.social-icon i {
+.connect-icon i {
     font-size: 2.8em;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     transition: all 0.3s ease;
 }
 
-.social-icon:hover i {
+.connect-icon:hover i {
     transform: scale(1.2);
     animation: pulse 0.5s ease;
 }
 
-.social-icon span {
+.connect-icon span {
     font-size: 1.1em;
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 
-/* ===== FOOTER SOCIAL ICONS - ORIGINAL BRAND COLORS ===== */
-.footer-social-icon.instagram,
-.footer-social-icons a:nth-child(1) {
-    color: #E4405F; /* Instagram brand color */
+/* Instagram - Original Brand Colors */
+.connect-icon.instagram {
+    color: #E4405F;
+    border: 2px solid #E4405F;
 }
 
-.footer-social-icon.instagram:hover,
-.footer-social-icons a:nth-child(1):hover {
+.connect-icon.instagram:hover {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    color: white;
+    border-color: transparent;
+}
+
+/* YouTube - Original Brand Colors */
+.connect-icon.youtube {
+    color: #FF0000;
+    border: 2px solid #FF0000;
+}
+
+.connect-icon.youtube:hover {
+    background: #FF0000;
+    color: white;
+    border-color: transparent;
+}
+
+/* Facebook - Original Brand Colors */
+.connect-icon.facebook {
+    color: #1877F2;
+    border: 2px solid #1877F2;
+}
+
+.connect-icon.facebook:hover {
+    background: #1877F2;
+    color: white;
+    border-color: transparent;
+}
+
+/* WhatsApp - Original Brand Colors */
+.connect-icon.whatsapp {
+    color: #25D366;
+    border: 2px solid #25D366;
+}
+
+.connect-icon.whatsapp:hover {
+    background: #25D366;
+    color: white;
+    border-color: transparent;
+}
+
+/* ===== FOOTER SOCIAL ICONS ===== */
+.footer-social-icon.instagram {
+    color: #E4405F;
+}
+
+.footer-social-icon.instagram:hover {
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
     color: white;
 }
 
-.footer-social-icon.youtube,
-.footer-social-icons a:nth-child(2) {
-    color: #FF0000; /* YouTube brand color */
+.footer-social-icon.youtube {
+    color: #FF0000;
 }
 
-.footer-social-icon.youtube:hover,
-.footer-social-icons a:nth-child(2):hover {
+.footer-social-icon.youtube:hover {
     background: #FF0000;
     color: white;
 }
 
-.footer-social-icon.facebook,
-.footer-social-icons a:nth-child(3) {
-    color: #1877F2; /* Facebook brand color */
+.footer-social-icon.facebook {
+    color: #1877F2;
 }
 
-.footer-social-icon.facebook:hover,
-.footer-social-icons a:nth-child(3):hover {
+.footer-social-icon.facebook:hover {
     background: #1877F2;
     color: white;
 }
 
-.footer-social-icon.whatsapp,
-.footer-social-icons a:nth-child(4) {
-    color: #25D366; /* WhatsApp brand color */
+.footer-social-icon.whatsapp {
+    color: #25D366;
 }
 
-.footer-social-icon.whatsapp:hover,
-.footer-social-icons a:nth-child(4):hover {
+.footer-social-icon.whatsapp:hover {
     background: #25D366;
     color: white;
 }
@@ -1558,18 +1553,6 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     }
 
-    /* Mobile Social Icons - Keep horizontal */
-    .social-icon {
-        min-width: 100px;
-        padding: 15px;
-    }
-
-    .social-icons {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .section-title {
         font-size: 1.8em;
     }
@@ -1609,15 +1592,31 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .social-title {
+    /* Connect With Us Mobile */
+    .connect-with-us-section {
+        padding: 30px 20px;
+        margin: 30px auto;
+    }
+    
+    .connect-title {
         font-size: 1.5em;
+        margin-bottom: 25px;
+    }
+    
+    .connect-icons {
+        gap: 15px;
+    }
+    
+    .connect-icon {
+        min-width: 100px;
+        padding: 15px;
     }
 
-    .social-icon i {
+    .connect-icon i {
         font-size: 2em;
     }
 
-    .social-icon span {
+    .connect-icon span {
         font-size: 0.9em;
     }
 
@@ -1717,18 +1716,35 @@ body {
         grid-template-columns: 1fr;
     }
 
-    /* Mobile Social Icons - Keep horizontal but wrap */
-    .social-icons {
+    /* Connect With Us Mobile Small */
+    .connect-with-us-section {
+        padding: 25px 15px;
+        margin: 25px auto;
+    }
+    
+    .connect-title {
+        font-size: 1.3em;
+        margin-bottom: 20px;
+    }
+    
+    .connect-icons {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 10px;
         justify-content: center;
     }
-
-    .social-icon {
-        width: auto;
+    
+    .connect-icon {
         min-width: 100px;
         padding: 12px;
+    }
+
+    .connect-icon i {
+        font-size: 1.8em;
+    }
+
+    .connect-icon span {
+        font-size: 0.8em;
     }
 
     /* Gallery Mobile Small Styles */
