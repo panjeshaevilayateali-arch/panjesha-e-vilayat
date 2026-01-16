@@ -2034,52 +2034,29 @@ body {
   background: none !important;
 }
 
-/* ===== FOOTER SOCIAL ICON FIXES ===== */
-/* Ensure links don't turn blue */
-.footer-social-icons a {
-    text-decoration: none !important;
+/* EMERGENCY ICON FIX - Add if icons still not showing */
+.fa-instagram:before { content: "\f16d"; }
+.fa-youtube:before { content: "\f167"; }
+.fa-facebook:before { content: "\f39e"; }
+.fa-whatsapp:before { content: "\f232"; }
+
+.fab {
+    font-family: "Font Awesome 6 Brands";
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+/* Remove any blue link color */
+a.footer-social-icon,
+a.footer-social-icon:link,
+a.footer-social-icon:visited,
+a.footer-social-icon:hover,
+a.footer-social-icon:active {
     color: inherit !important;
-}
-
-/* Force specific colors for each platform */
-.footer-social-icon.instagram i {
-    color: #E4405F !important;
-}
-
-.footer-social-icon.youtube i {
-    color: #FF0000 !important;
-}
-
-.footer-social-icon.facebook i {
-    color: #1877F2 !important;
-}
-
-.footer-social-icon.whatsapp i {
-    color: #25D366 !important;
-}
-
-/* Hover effects */
-.footer-social-icon.instagram:hover i {
-    color: white !important;
-    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-}
-
-.footer-social-icon.youtube:hover i {
-    color: white !important;
-    background: #FF0000;
-}
-
-.footer-social-icon.facebook:hover i {
-    color: white !important;
-    background: #1877F2;
-}
-
-.footer-social-icon.whatsapp:hover i {
-    color: white !important;
-    background: #25D366;
-}
-
-/* Remove any blue link styling */
-a:link, a:visited, a:hover, a:active {
     text-decoration: none !important;
 }
