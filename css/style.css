@@ -1968,42 +1968,68 @@ body {
 .connect-icons a i {
   color: inherit !important;
 }
+
 /* FIX FOR SOCIAL MEDIA ICON COLORS - ADD TO END OF FILE */
 
+/* Force icon colors for Connect With Us section */
 .connect-icon.youtube i {
-  color: #FF0000;
+  color: #FF0000 !important;
 }
 
 .connect-icon.facebook i {
-  color: #1877F2;
+  color: #1877F2 !important;
 }
 
 .connect-icon.whatsapp i {
-  color: #25D366;
+  color: #25D366 !important;
 }
 
 .connect-icon.instagram i {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
 }
 
+/* Fix for Footer icons too */
 .footer-social-icon.youtube i {
-  color: #FF0000;
+  color: #FF0000 !important;
 }
 
 .footer-social-icon.facebook i {
-  color: #1877F2;
+  color: #1877F2 !important;
 }
 
 .footer-social-icon.whatsapp i {
-  color: #25D366;
+  color: #25D366 !important;
 }
 
 .footer-social-icon.instagram i {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* Ensure hover states work correctly */
+.connect-icon.youtube:hover i,
+.connect-icon.facebook:hover i,
+.connect-icon.whatsapp:hover i {
+  color: #ffffff !important;
+}
+
+.connect-icon.instagram:hover i {
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
+}
+
+.footer-social-icon.youtube:hover i,
+.footer-social-icon.facebook:hover i,
+.footer-social-icon.whatsapp:hover i {
+  color: #ffffff !important;
+}
+
+.footer-social-icon.instagram:hover i {
+  -webkit-text-fill-color: #ffffff !important;
+  background: none !important;
 }
