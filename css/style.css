@@ -2060,3 +2060,59 @@ a.footer-social-icon:active {
     color: inherit !important;
     text-decoration: none !important;
 }
+
+/* ===== FOOTER ICON COLOR FORCE FIX ===== */
+/* Force colors to apply */
+.footer-social-icon.instagram,
+.footer-social-icon.instagram i {
+    color: #E4405F !important;
+}
+
+.footer-social-icon.youtube,
+.footer-social-icon.youtube i {
+    color: #FF0000 !important;
+}
+
+.footer-social-icon.facebook,
+.footer-social-icon.facebook i {
+    color: #1877F2 !important;
+}
+
+.footer-social-icon.whatsapp,
+.footer-social-icon.whatsapp i {
+    color: #25D366 !important;
+}
+
+/* Force hover colors */
+.footer-social-icon.instagram:hover,
+.footer-social-icon.instagram:hover i {
+    background: #E4405F !important;
+    color: white !important;
+}
+
+.footer-social-icon.youtube:hover,
+.footer-social-icon.youtube:hover i {
+    background: #FF0000 !important;
+    color: white !important;
+}
+
+.footer-social-icon.facebook:hover,
+.footer-social-icon.facebook:hover i {
+    background: #1877F2 !important;
+    color: white !important;
+}
+
+.footer-social-icon.whatsapp:hover,
+.footer-social-icon.whatsapp:hover i {
+    background: #25D366 !important;
+    color: white !important;
+}
+
+/* Remove any browser default link styling */
+a.footer-social-icon:link,
+a.footer-social-icon:visited,
+a.footer-social-icon:hover,
+a.footer-social-icon:active {
+    color: inherit !important;
+    text-decoration: none !important;
+}
