@@ -20,6 +20,7 @@
   --youtube: #FF0000;
   --facebook: #1877F2;
   --whatsapp: #25D366;
+  --twitter: #1DA1F2;
   
   /* Gradients */
   --gradient-black: linear-gradient(135deg, #000000 0%, #2d0000 100%);
@@ -172,6 +173,16 @@ body {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes iconPulse {
+  0%, 100% { transform: scale(1.2); }
+  50% { transform: scale(1.4); }
 }
 
 /* ===== HEADER STYLES ===== */
@@ -1013,102 +1024,180 @@ body {
   margin-top: var(--space-xs);
 }
 
-/* ===== SOCIAL MEDIA SECTION STYLES ===== */
-.social-media {
-  text-align: center;
+/* ===== CONNECT WITH US SECTION ===== */
+.connect-with-us-section {
+  background: linear-gradient(135deg, rgba(255, 245, 245, 0.95) 0%, rgba(255, 230, 230, 0.95) 100%);
+  padding: var(--space-xxxl);
+  border-radius: var(--radius-xl);
+  border: 3px solid var(--primary-red);
+  box-shadow: var(--shadow-red-heavy);
   margin: var(--space-xxl) 0;
-  padding: var(--space-xxl);
-  background: var(--gradient-light-pink);
-  border-radius: var(--radius-lg);
-  border-left: 5px solid var(--primary-red);
-  border-right: 5px solid var(--primary-red);
-  box-shadow: var(--shadow-medium);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.social-title {
-  font-size: 1.8em;
+.connect-with-us-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--gradient-red-animated);
+  background-size: 200% 100%;
+  animation: gradientMove 3s linear infinite;
+}
+
+.connect-title {
+  font-size: 2em;
   color: var(--dark-red);
   margin-bottom: var(--space-xl);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+  padding-bottom: var(--space-sm);
 }
 
-.social-icons {
+.connect-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-red);
+}
+
+.connect-icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--space-xxl);
+  gap: var(--space-xxxl);
   flex-wrap: wrap;
+  margin-top: var(--space-xl);
+  padding: var(--space-xl) 0;
 }
 
-.social-icon {
+.connect-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
   color: var(--dark-red);
   transition: all 0.4s ease;
-  padding: var(--space-lg);
+  padding: var(--space-xl);
   border-radius: var(--radius-xl);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 245, 245, 0.9) 100%);
-  min-width: 120px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 250, 250, 0.95) 100%);
+  min-width: 140px;
+  box-shadow: var(--shadow-medium);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
-.social-icon::before {
+.connect-icon::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: var(--gradient-red-animated);
+  bottom: 0;
+  background: var(--gradient-red);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
 }
 
-.social-icon:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+.connect-icon:hover::before {
+  opacity: 1;
 }
 
-.social-icon i {
-  font-size: 2.5em;
-  margin-bottom: var(--space-sm);
+.connect-icon:hover {
+  transform: translateY(-12px) scale(1.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: var(--white);
+}
+
+.connect-icon i {
+  font-size: 3em;
+  margin-bottom: var(--space-md);
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.connect-icon:hover i {
+  transform: scale(1.2);
+  animation: iconPulse 0.6s ease;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.connect-icon span {
+  font-size: 1.1em;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   transition: all 0.3s ease;
 }
 
-.social-icon:hover i {
-  transform: scale(1.2);
-  animation: pulse 0.5s ease;
+/* Specific colors for each social media icon */
+.connect-icon.facebook i {
+  color: var(--facebook);
 }
 
-.social-icon span {
-  font-size: 1em;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* Social Media Specific Colors */
-.social-icon.instagram:hover {
-  background: var(--instagram);
-  color: var(--white);
-}
-
-.social-icon.youtube:hover {
-  background: var(--youtube);
-  color: var(--white);
-}
-
-.social-icon.facebook:hover {
+.connect-icon.facebook:hover {
   background: var(--facebook);
+  box-shadow: 0 15px 35px rgba(24, 119, 242, 0.3);
+}
+
+.connect-icon.facebook:hover i {
   color: var(--white);
 }
 
-.social-icon.whatsapp:hover {
+.connect-icon.instagram i {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.connect-icon.instagram:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  box-shadow: 0 15px 35px rgba(225, 48, 108, 0.3);
+}
+
+.connect-icon.instagram:hover i {
+  -webkit-text-fill-color: white;
+  background: none;
+}
+
+.connect-icon.youtube i {
+  color: var(--youtube);
+}
+
+.connect-icon.youtube:hover {
+  background: var(--youtube);
+  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3);
+}
+
+.connect-icon.youtube:hover i {
+  color: var(--white);
+}
+
+.connect-icon.whatsapp i {
+  color: var(--whatsapp);
+}
+
+.connect-icon.whatsapp:hover {
   background: var(--whatsapp);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.3);
+}
+
+.connect-icon.whatsapp:hover i {
   color: var(--white);
 }
 
@@ -1346,7 +1435,6 @@ body {
   flex-wrap: wrap;
 }
 
-/* FIXED: Footer Social Icons - Remove blue color */
 .footer-social-icons a {
   text-decoration: none;
   color: inherit;
@@ -1364,7 +1452,7 @@ body {
   justify-content: center;
 }
 
-/* FIXED: Individual Social Icon Colors in Footer */
+/* Footer Social Icon Colors */
 .footer-social-icon.instagram {
   color: var(--instagram);
 }
@@ -1611,13 +1699,17 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
-  .social-icon {
-    min-width: 100px;
+  .connect-icons {
+    gap: var(--space-lg);
+  }
+
+  .connect-icon {
+    min-width: 110px;
     padding: var(--space-lg);
   }
 
-  .social-icons {
-    gap: var(--space-lg);
+  .connect-icon i {
+    font-size: 2.5em;
   }
 
   .section-title {
@@ -1659,15 +1751,15 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .social-title {
+  .connect-title {
     font-size: 1.5em;
   }
 
-  .social-icon i {
+  .connect-icon i {
     font-size: 2em;
   }
 
-  .social-icon span {
+  .connect-icon span {
     font-size: 0.9em;
   }
 
@@ -1755,12 +1847,12 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .social-icons {
+  .connect-icons {
     flex-direction: column;
     gap: var(--space-sm);
   }
 
-  .social-icon {
+  .connect-icon {
     width: 100%;
     min-width: auto;
   }
@@ -1867,12 +1959,12 @@ body {
 /* ===== IMPORTANT FIXES FOR BLUE SOCIAL ICONS ===== */
 /* This ensures all social icons maintain their proper colors */
 .footer-social-icons a,
-.social-icons a {
+.connect-icons a {
   text-decoration: none !important;
   color: inherit !important;
 }
 
 .footer-social-icons a i,
-.social-icons a i {
+.connect-icons a i {
   color: inherit !important;
 }
