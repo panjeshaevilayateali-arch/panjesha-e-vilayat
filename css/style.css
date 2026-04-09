@@ -217,9 +217,9 @@ body {
 .header-logo img,
 .header-logo-right img {
   width: 80px;
-  height: 90px;
+  height: auto;
   border-radius: var(--radius-circle);
-  object-fit: cover;
+  object-fit: contain;
   border: 3px solid var(--primary-red);
   box-shadow: var(--shadow-red-glow);
   transition: transform 0.3s ease;
