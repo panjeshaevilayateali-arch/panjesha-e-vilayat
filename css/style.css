@@ -219,7 +219,7 @@ body {
   width: 80px;
   height: auto;
   border-radius: var(--radius-circle);
-  object-fit: contain;
+  object-fit: cover;
   border: 3px solid var(--primary-red);
   box-shadow: var(--shadow-red-glow);
   transition: transform 0.3s ease;
